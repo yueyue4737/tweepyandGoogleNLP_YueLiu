@@ -15,10 +15,10 @@ import tweepy
 # get 4 strings here: https://developer.twitter.com/en/apps
 # do not change the sequence
 # do not leak to others
-KEY = 'V1tpYUTAypZIYBlE7je5QKHTG'
-KEY_SECRET = 'C2DvTzJUXHtMejpdXhTdplNeMv9A9QVtQc5VtETXzbMXqpnFGA'
-TOKEN = '1172881526079533056-AcEIaSammHkkf7msjBm3EKMZwFRjCi' # this is a key
-TOKEN_SECRET = 'QpyVUDKII7iH9FUNwXWtq4sD07WXxETLfczBO9Ll04QaS' # this is a secret
+KEY = ''
+KEY_SECRET = ''
+TOKEN = '' # this is a key
+TOKEN_SECRET = '' # this is a secret
 
 # http://docs.tweepy.org/en/latest/auth_tutorial.html
 def authorize():
