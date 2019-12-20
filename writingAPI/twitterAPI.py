@@ -58,10 +58,10 @@ if __name__ == '__main__':
     for i in range(10):
         print("The number of retweet for line", i, "is", tweets[i].retweet_count)
     print(df.head(100))
-# .csv
+# .csv: a comma-separated values file, open in Microsoft Excel or R
     df.to_csv("tweet.csv")
-# .json
+# .json: JavaScript Object Notation, open in data base
     with open('tweet.json', 'w') as f:
         for tweet in tweets:
-            json.dump(tweet._json, file, sort_keys=True, indent=4)
-        f.close() # an important step for security
+            json.dump(tweet._json, f, sort_keys=True, indent=4)
+        f.close() # an important step for safety issue
