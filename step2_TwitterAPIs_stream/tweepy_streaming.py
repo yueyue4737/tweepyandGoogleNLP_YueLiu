@@ -7,7 +7,8 @@
 # https://github.com/tweepy/tweepy/blob/master/tweepy/streaming.py
 # @kaggle
 # summary: streaming api is different from REST api
-# next step1: change a container for the user relationships
+# next step1: use the on_error method
+# next step2: different attribute in the class auth vs api
 
 import tweepy
 import twitter_credentials
@@ -15,22 +16,29 @@ import twitter_credentials
 # StreamListener: classify the messages and route the method
 # inheritaing from streamlistener
 class MyStreamListener(tweepy.StreamListener):
-    # use OAuth 1a for application user only
-    def get_authentication():
+
+    def __init__(self):
+        pass
+
+    def get_authentication(self):
         """get authentication"""
         # create an OAuthHandler instance
         auth = tweepy.OAuthHandler(twitter_credentials.consumer_key, twitter_credentials.consumer_secret)
         # re-build the OAuthHandler from the stored access token
         auth.set_access_token(twitter_credentials.access_token, twitter_credentials.access_token_secret)
-        api = tweepy.API(auth)
-        return api
+        return auth
 
-    def get_stream(self, status, word):
-        print(status.text)
-        newStreamListener = MyStreamListener()
-        stream_tweets = tweepy.Stream(auth=self.get_authentication(), listener=newStreamListener)
-        stream_tweets.filter(track=[str(word)], is_async=True)
+    def get_stream(self, new_auth, new_listener, word_list):
+        stream_tweets = tweepy.Stream(auth=new_auth, listener=new_listener)
+        #stream_tweets.filter(track=word_list)
+        stream_tweets.filter(track=word_list, is_async=True)
         return stream_tweets
+    #
+    # def on_error(self, status_code):
+    #     print(status_code)
 
-if __name__ == 'main':
-    pass
+if __name__ == '__main__':
+    new_listener = MyStreamListener()
+    new_auth = new_listener.get_authentication()
+    word_list = ['kaggle']
+    print(new_listener.get_stream(new_auth, new_listener, word_list))
