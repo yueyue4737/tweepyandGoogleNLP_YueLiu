@@ -1,21 +1,19 @@
 # !/usr/bin/env/python3
 # Copyright 2019 YueLiu liuyue2@bu.edu
-# Program Goal: get the real-time tweets about a competition
+# Program Goal: get the real-time tweets about a technology organization
 # Reference1: Twitter Streaming API Documentation
 # https://developer.twitter.com/en/docs/tweets/rules-and-filtering/overview/standard-operators
 # Reference2: the source code
 # https://github.com/tweepy/tweepy/blob/master/tweepy/streaming.py
-# @kaggle
-# summary: streaming api is different from REST api
 # next step1: use the on_error method
-# next step2: different attribute in the class auth vs api
+# next step2: streaming api is different from REST api
 
 import tweepy
 import twitter_credentials
 
 # StreamListener: classify the messages and route the method
-# inheritaing from streamlistener
-class MyStreamListener(tweepy.StreamListener):
+# creating an object of the streamlistener
+class MyStreamListener(tweepy.streaming.StreamListener):
 
     def __init__(self):
         pass
@@ -33,7 +31,7 @@ class MyStreamListener(tweepy.StreamListener):
         #stream_tweets.filter(track=word_list)
         stream_tweets.filter(track=word_list, is_async=True)
         return stream_tweets
-    #
+
     # def on_error(self, status_code):
     #     print(status_code)
 
