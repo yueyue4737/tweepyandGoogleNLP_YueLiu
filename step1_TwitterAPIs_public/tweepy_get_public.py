@@ -2,9 +2,8 @@
 # Copyright 2019 YueLiu liuyue2@bu.edu
 # Program Goal: get the public tweets from a famous organization user
 # @kaggle
-# next step1: change a container for the user relationships
-# next step2: using the status object correctly
-# next step3: distinguish the methods in the timeline method
+# next step1: get a standard authentication method, api might not be a better return variable
+# next step2: (choose specific variable and) store the list of data in a file/database
 
 import tweepy
 import twitter_credentials
@@ -24,17 +23,17 @@ def get_authtication():
 def get_public_tweets(api,user,n):
     """get public tweets"""
     public_tweets = []
-    # don't use home_timeline!
-    # we want the specified user only
+    # blocked when using home_timeline
+    # user_timeline can help us get the specified tweets
     target = tweepy.Cursor(api.user_timeline, id=user)
     for tweet in target.items(n):
         public_tweets.append(tweet)
     return public_tweets
 
 # the following 3 methods are to help analyze
-def get_retweeters(api):
-    """get retweets"""
-    return api.retweeters(id=10)
+# def get_retweeters(api):
+#     """get retweets"""
+#     return api.retweeters(id=80422885)
 
 def get_relationship(api,user):
     """get retweeters, friends lists and followers"""
@@ -51,8 +50,6 @@ def get_relationship(api,user):
 if __name__ == '__main__':
     api = get_authtication()
     user = 'kaggle'
-    # published = get_public_tweets(api,user,10)
-    # for i in range(len(published)):
-    #     print(published[i])
+    print(get_public_tweets(api,user,10))
+    #print(get_retweeters(api))
     print(get_relationship(api,user))
-    # print(get_retweeters(api))
