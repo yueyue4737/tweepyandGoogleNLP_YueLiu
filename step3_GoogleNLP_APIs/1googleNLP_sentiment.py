@@ -3,7 +3,8 @@
 # Program Goal: using Google NLP API to do sentiment analysis
 # next step 1: avoid global variables
 # next step 2: name the parameters in a stable way
-# put the function into a class, split it into 2 if necessary
+# next step 3: use command line tool
+# next step 4:put the function into a class, split it into 2 if necessary
 
 # calling the Natural Language API by using client library
 # import the Google client library
@@ -11,12 +12,14 @@ from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 from google.oauth2 import service_account
-
+import os
+from sys import argv
 # getting the credentials
-credentials = service_account.Credentials.from_service_account_file('')
+credentials_path = os.path.dirname(os.path.realpath(__file__)) + os.sep + "My First Project-5e280331efdb.json"
+credentials = service_account.Credentials.from_service_account_file(credentials_path)
 
 # setting up authentication in the cloud console
-client = language.LanguageServiceClient()
+client = language.LanguageServiceClient(credentials=credentials)
 
 def sentiment_analysis(file_name):
     """
@@ -44,6 +47,11 @@ def sentiment_analysis(file_name):
             reaction = 'Mixed'
     return reaction
 
-if __name__ == 'main':
-    file_name = 'tweets.txt'
-    sentiment_analysis(file)
+file_name = 'tweets.txt'
+res = sentiment_analysis(file_name)
+print(res)
+
+# if __name__ == 'main':
+#     file_name = ''
+#     res = sentiment_analysis(file_name)
+#     print(res)
