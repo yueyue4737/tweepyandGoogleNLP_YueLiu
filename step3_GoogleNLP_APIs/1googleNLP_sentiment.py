@@ -15,7 +15,7 @@ from google.oauth2 import service_account
 import os
 from sys import argv
 # getting the credentials
-credentials_path = os.path.dirname(os.path.realpath(__file__)) + os.sep + "My First Project-5e280331efdb.json"
+credentials_path = os.path.dirname(os.path.realpath(__file__)) + os.sep + "[FILE_NAME].json"
 credentials = service_account.Credentials.from_service_account_file(credentials_path)
 
 # setting up authentication in the cloud console
@@ -47,7 +47,7 @@ def sentiment_analysis(file_name):
             reaction = 'Mixed'
     return reaction
 
-file_name = 'tweets.txt'
+file_name = '' # file name with format
 res = sentiment_analysis(file_name)
 print(res)
 
