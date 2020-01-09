@@ -2,7 +2,7 @@
 # Copyright 2019 YueLiu liuyue2@bu.edu
 # application mash
 # Application Goal1: telling the twitter API(tweepy) to get the streaming tweets
-# Application Goal2: asking the Google API(auto NLP) to analyze the sentiment
+# Application Goal2: asking the Google API(GOOGLE NLP) to analyze the sentiment
 # next step1: file format conversion
 # next step2: basic visualization(histogram)
 # next step3: simple testing about the users' story
@@ -18,12 +18,12 @@ import os
 import tweepy
 
 # regenerate the twitter credentials when getting HTTP response code
-consumer_key = 'IftnxL2Unk4xdjsYH7GhASueO'
-consumer_secret = 'DDJJK7Dv8cVOjBt7XZUGUDDDBEgW612iv4T47XCjxn1TYsKmWU'
-access_token = '1172881526079533056-T6Zy29JeJZByiddgYoY6i4CUHvThDe'
-access_token_secret = 'z6rnElMbktn4jvVHGHcwOFhHlhGQWaCw8SlCGClGnVYYr'
+consumer_key = ''
+consumer_secret = ''
+access_token = ''
+access_token_secret = ''
 # getting the google credentials in the cloud platform
-credentials_path = os.path.dirname(os.path.realpath(__file__)) + os.sep + "My First Project-5e280331efdb.json"
+credentials_path = os.path.dirname(os.path.realpath(__file__)) + os.sep + 'FILENAME.json'
 credentials = service_account.Credentials.from_service_account_file(credentials_path)
 
 # Program1: calling the APIs in the client library
