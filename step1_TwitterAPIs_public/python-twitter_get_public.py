@@ -2,8 +2,8 @@
 # Copyright 2019 YueLiu liuyue2@bu.edu
 # Program Goal: get the public tweets from a famous organization user
 # @kaggle
-# Help to understand the numeric id
-# Help to understand the number limits
+# Help understand the numeric id
+# Help understand the number limits
 
 import twitter_credentials
 import twitter
