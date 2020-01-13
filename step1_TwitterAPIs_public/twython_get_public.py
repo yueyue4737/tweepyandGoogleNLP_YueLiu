@@ -24,4 +24,3 @@ def get_public_tweets(api,screen_name):
 api = get_authentication()
 screen_name = 'kaggle'
 public_tweets = get_public_tweets(api, screen_name)
-print(public_tweets)
