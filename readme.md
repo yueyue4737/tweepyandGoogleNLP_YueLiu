@@ -1,4 +1,4 @@
-Writing APIs to analyze the sentiment in text tweets
+Analyze the sentiment in text tweets
 ===
 
 <p> Project Goal: <p>
@@ -20,16 +20,16 @@ MVP & User Stories
 
 Modular Design
 ---
-
+![Alt Text](https://github.com/yueyue4737/newMiniProject1_YueLiu/blob/master/img/1.png)
 Understanding Different Twitter APIs
 ---
-
+![Alt Text](https://github.com/yueyue4737/newMiniProject1_YueLiu/blob/master/img/2.png)
 Google Natural Language APIs
 ---
-
+![Alt Text](https://github.com/yueyue4737/newMiniProject1_YueLiu/blob/master/img/3.png)
 Error Conditions
 ---
-
+![Alt Text](https://github.com/yueyue4737/newMiniProject1_YueLiu/blob/master/img/4.png)
 Notes
 ---
 <p> https://docs.google.com/document/d/1eeyixRU_v9i6gFYw9dX2FV2Lf5W_iDipYEnoU-0CvZ8/edit?usp=sharing <p>
