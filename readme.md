@@ -9,6 +9,15 @@ Writing APIs to analyze the sentiment in text tweets
 MVP & User Stories
 ---
 
+#### Minimum Viable Product(MVP): 
+<p> 1. Request for the target tweets and get the valid status of response via Twitter API; <p>
+<p> 2. Request to analyze the sentiment of the tweets and get an answer via Google API; <p>
+<p> 3. Get a small-scale dataset for labeling mini project2. <p>
+
+#### User Story: 
+<p> 1. As a student learning social linguistics, I want to know users’ attitudes to a real disaster; <p>
+<p> 2. As a blogger, I want to know where is having a real disaster. <p>
+
 Modular Design
 ---
 
@@ -21,8 +30,7 @@ Google Natural Language APIs
 Error Conditions
 ---
 
-Expose and Map the individual API to the modules
----
-
 Notes
 ---
+<p> https://docs.google.com/document/d/1eeyixRU_v9i6gFYw9dX2FV2Lf5W_iDipYEnoU-0CvZ8/edit?usp=sharing <p>
+
